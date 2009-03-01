@@ -1,17 +1,20 @@
-#!/usr/local/bin/perl
-
+#!/usr/bin/env perl
+BEGIN { require 'PerlYuYan.pm'; };
 use Lingua::Sinica::PerlYuYan;
 
-��ĵ�����Y�C
+用警兮用嚴。
 
-�L�D
-�@�ܤ@
-�v��
+印道
+一至一
+哉兮
 
-�L�s���������Өo
-  �S�֤��s���o
-    �S��@�o
+印編曰雜申雜申矣
+  又纖曰龍鼠矣
+    又曰一矣
 
-�ä�
-��L�H���ڪ���    �S���h�G�G��
-�J�����P�����F��  �^�N�q�^�w���ҩ~
+亂曰
+國無人莫我知兮    又何懷乎故都
+既莫足與為美政兮  吾將從彭咸之所居
+
+印重一至十兮
+重起一至十合始印終

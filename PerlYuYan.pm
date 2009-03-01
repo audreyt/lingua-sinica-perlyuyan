@@ -5,7 +5,9 @@ package Lingua::Sinica::PerlYuYan;
 $Lingua::Sinica::PerlYuYan::VERSION = '0.03';
 
 use strict;
-use Filter::Simple 0.70;
+use utf8;
+use Filter::Simple;
+use Encode;
 
 =head1 NAME
 
@@ -14,17 +16,17 @@ Lingua::Sinica::PerlYuYan - Use Chinese to write Perl
 =head1 SYNOPSIS
 
     #!/usr/local/bin/perl
-    # The Sieve of Eratosthenes - ®J©Ô¦«´µªâ¿zªk
+    # The Sieve of Eratosthenes - åŸƒæ‹‰æ‰˜æ–¯èŠ¬ç¯©æ³•
     use Lingua::Sinica::PerlYuYan;
 
-    ¥ÎÄw¤¼¥ÎÄY  ¤«²U¤¼µLÃª¡C
-    ¦L¤ê³Ì°ª¨o  ¤S¹D¼ÆµM«v¡C
-    ºI°_§^¯Â­·  ½á¤p¤J¤j¦X¡C
-    ²ß¤©§^°}¦a  ¨Ã¤G¦Ü¯Â­·¡C
-    ·í°_¬q½á¨ú  ¥[°}¦a¦X©l¡C
-    °}¦a½á¿z©l  Ã´Ã´¦¹Âø¬q¡C
-    ²×°}¦a¤¼¦L  ¥¿¹D¦¸¼Ğ«v¡C
-    ¿éªÅ±µ¬qÂI  ¦C²×µù®õ¨Ó¡C
+    ç”¨ç±Œå…®ç”¨åš´  äº•æ¶¸å…®ç„¡ç¤™ã€‚
+    å°æ›°æœ€é«˜çŸ£  åˆé“æ•¸ç„¶å“‰ã€‚
+    æˆªèµ·å¾ç´”é¢¨  è³¦å°å…¥å¤§åˆã€‚
+    ç¿’äºˆå¾é™£åœ°  ä¸¦äºŒè‡³ç´”é¢¨ã€‚
+    ç•¶èµ·æ®µè³¦å–  åŠ é™£åœ°åˆå§‹ã€‚
+    é™£åœ°è³¦ç¯©å§‹  ç¹«ç¹«æ­¤é›œæ®µã€‚
+    çµ‚é™£åœ°å…®å°  æ­£é“æ¬¡æ¨™å“‰ã€‚
+    è¼¸ç©ºæ¥æ®µé»  åˆ—çµ‚è¨»æ³°ä¾†ã€‚
 
 =head1 DESCRIPTION
 
@@ -36,12 +38,12 @@ This module uses the single-character property of Chinese to disambiguate
 between keywords, thus whitespaces could be omitted this way, much like
 in real Chinese writings.
 
-The vocabulary is of the I<WenYanWen> (¤å¨¥¤å, literary text) mode,
+The vocabulary is of the I<WenYanWen> (æ–‡è¨€æ–‡, literary text) mode,
 not much used in modern Chinese, which prefers the I<BaiHuaWen>
-(¥Õ¸Ü¤å, spoken text) mode with multiple-syllable words.
+(ç™½è©±æ–‡, spoken text) mode with multiple-syllable words.
 
 You could use C<Lingua::Sinica::PerlYuYan::translate()> (or simply
-as C<Ä¶()>) to translate a string containing English programs into
+as C<è­¯()>) to translate a string containing English programs into
 Chinese.
 
 =head1 CAVEATS
@@ -50,26 +52,26 @@ Currently Big-5 only. UTF-8 and GB2312 support is trivial, and will be
 available upon request.
 
 =cut
-
 our %Tab;
 while (<DATA>) {
+    $_ = Encode::decode_utf8( $_ );
     next if /^\s*$/;
     chomp; my $chi = <DATA>; chomp $chi;
-    $chi =~ s/\w\w+//g;
+    $chi =~ s/[a-z]+//ig;
     $chi =~ s/\s//g;
-    @Tab{$chi =~ /(..)/g} = map { /^[a-z]+$/ ? "$_ " : $_ } split(/[\s\t]/, $_);
+    @Tab{ $chi =~ /(.)/g } = map { /^[a-z]+$/ ? "$_ " : $_ } split( /[\s\t]/, $_ );
 }
 
-@Tab{qw/¸ê¤ê     ¶Ã¤ê    ÀÉ¤ê     ¦C¤ê     ®M¤ê/} = qw{
+@Tab{qw/è³‡æ›°     äº‚æ›°    æª”æ›°     åˆ—æ›°     å¥—æ›°/} = qw{
         __DATA__ __END__ __FILE__ __LINE__ __PACKAGE__
 };
 
 FILTER {
-    foreach my $key (sort {length $b <=> length $a} keys %Tab) {
-	print "$key\n";
-	s/\Q$key\E/$Tab{$key}/g;
+    $_ = Encode::decode_utf8($_);
+    foreach my $key ( sort { length $b <=> length $a } keys %Tab ) {
+        print "$key\n";
+        s/$key/$Tab{$key}/g;
     }
-
     return $_;
 };
 
@@ -106,97 +108,100 @@ See L<http://www.perl.com/perl/misc/Artistic.html>
 
 __DATA__
 a b c d e f g h i j k l m n o p q r s t u v w x y z
-¥Ò¤A¤ş¤B¥³¤v©°¨¯¤Ğ¬Ñ¤l¤¡±G¥f¨°¤x¤È¥¼¥Ó¨»¦¦¥è¦a¤ô¤õ­·
+ç”²ä¹™ä¸™ä¸æˆŠå·±åºšè¾›å£¬ç™¸å­ä¸‘å¯…å¯è¾°å·³åˆæœªç”³é…‰æˆŒäº¥åœ°æ°´ç«é¢¨
 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
-«C¤ß¨ª¨x¶ÀµÊ¥ÕªÍ¶ÂµÇ¹«¤ûªê¨ßÀs³D°¨¦ÏµUÂûª¯½Ş¬K®L¬î¥V
+é’å¿ƒèµ¤è‚é»ƒè„¾ç™½è‚ºé»‘è…é¼ ç‰›è™å…”é¾è›‡é¦¬ç¾ŠçŒ´é›ç‹—è±¬æ˜¥å¤ç§‹å†¬
 
 0 1 2 3 4 5 6 7 8 9 10 100 1000 10000 10000_0000
-¹s¤@¤G¤T¥|¤­¤»¤C¤K¤E¤Q ¦Ê  ¤d   ¸U    »õ
+é›¶ä¸€äºŒä¸‰å››äº”å…­ä¸ƒå…«ä¹å ç™¾  åƒ   è¬    å„„
 0 1 2 3 4 5 6 7 8 9 10 100 1000 20 30
-¹s³ü¶Lå÷¸v¥î³°¬m®Ã¨h¬B ¨Õ  ¥a   ¤Ü ¤Ê
+é›¶å£¹è²³æ¯¿è‚†ä¼é™¸æŸ’æŒç–æ‹¾ ä½°  ä»Ÿ   å»¿ å…
 0 1 2 3 4 5 6 7 8 9
-¢¯¢°¢±¢²¢³¢´¢µ¢¶¢·¢¸
+ï¼ï¼‘ï¼’ï¼“ï¼”ï¼•ï¼–ï¼—ï¼˜ï¼™
 
 ! @ # # $ % % ^ & * ( ) - = _ + + [ ] { } \ | ; : : 
-«D°}¤«µù¯ÂÂø¼ÒªR©M­¼°_¦X´î½á©³¥[¥¿¤º¥~©l²×°ÑÁp¤¼µM¼Ğ
+éé™£äº•è¨»ç´”é›œæ¨¡æå’Œä¹˜èµ·åˆæ¸›è³¦åº•åŠ æ­£å…§å¤–å§‹çµ‚åƒè¯å…®ç„¶æ¨™
 ' ' " " , , => < . . > / / ? ` ` ~
-¤ê¨o¹D«v¤S¨Ã»P ¤pÂI±µ¤j°£¤ÀÂj¦æªÌÃ´
+æ›°çŸ£é“å“‰åˆä¸¦èˆ‡ å°é»æ¥å¤§é™¤åˆ†æ­Ÿè¡Œè€…ç¹«
 ! @ # $ % ^ & * ( ) - = _ + [ ] { } \ | ; ; : ' " , , < . > / ? ` ~
-¡I¢I¡­¢C¢H¡s¡®¡¯¡]¡^¡Ğ¡×¡Å¡Ï¡e¡f¡a¡b¢­¡U¡F¡C¡G¡¦¡¨¡A¡B¡Õ¡D¡Ö¢¬¡H¡«¡ã
+ï¼ï¼ ï¼ƒï¼„ï¼…ï¸¿ï¼†ï¼Šï¼ˆï¼‰ï¼ï¼ç¦³æ´eã€•ï½›ï½â•²ï½œï¼›ã€‚ï¼šâ€™â€ï¼Œã€ï¼œï¼ï¼â•±ï¼Ÿâ€µâˆ¼
 
 .. ... ** ++ -- -> ::
-¦Ü ¤D  ¾­ ¼W ¦© ¤§ ©v
+è‡³ ä¹ƒ  å†ª å¢ æ‰£ ä¹‹ å®—
 
 && == || and or lt gt cmp eq not
-¤Î µ¥ ³\ ¥B  ©Î «e «á ¸û  ¦P §_
+åŠ ç­‰ è¨± ä¸”  æˆ– å‰ å¾Œ è¼ƒ  åŒ å¦
 
 $/ $_ @_ "\x20" "\t" "\n" main
-¬q ¦¹ ½Ñ ªÅ     ®æ   ¦C   ¥D
+æ®µ æ­¤ è«¸ ç©º     æ ¼   åˆ—   ä¸»
 
 STDIN STDOUT STDERR DATA BEGIN END INIT CHECK DESTROY
-¤J    ¥X     »~     ®Æ   ³Ğ    ¥½  ¨|   ¹î    ·À
+å…¥    å‡º     èª¤     æ–™   å‰µ    æœ«  è‚²   å¯Ÿ    æ»…
 
 chomp chop chr crypt hex index lc lcfirst length oct ord pack q/ qq/ reverse
-ºI    ±Ù   ¤å  ±K    ¤ø  ¯Á    ÅÖ ²Ó      ªø     ¨ö  §Ç  ¥]   ¤Ş Âù  °f      
+æˆª    æ–¬   æ–‡  å¯†    çˆ»  ç´¢    çº– ç´°      é•·     å¦  åº  åŒ…   å¼• é›™  é€†      
 rindex sprintf substr tr/ uc ucfirst y/
-ÀË     ½s      ³¡     Âà  §§ «p      ´« 
+æª¢     ç·¨      éƒ¨     è½‰  å£¯ åš      æ› 
 
 m/ pos quotemeta s/ split study qr/
-²Å ¦ì  ¶h        ¥N ¤Á    ²ß    ³W
+ç¬¦ ä½  é€¸        ä»£ åˆ‡    ç¿’    è¦
 
 abs atan2 cos exp hex int log oct rand sin sqrt srand
-µ´  ¨¤    ¾l  ¶¥  ¤ø  ¾ã  ¹ï  ¨ö  ¶Ã   ©¶  ®Ú   ÄÌ    
+çµ•  è§’    é¤˜  éš  çˆ»  æ•´  å°  å¦  äº‚   å¼¦  æ ¹   é¨·    
 
 pop push shift splice unshift
-¼u  ±À   ¨ú    ©â     ¤©      
+å½ˆ  æ¨   å–    æŠ½     äºˆ      
 
 grep join map qw/ reverse sort unpack
-¿z   ¨Ö   ¬M  ½g  °f      ±Æ   ±Ò     
+ç¯©   ä½µ   æ˜   ç¯‡  é€†      æ’   å•Ÿ     
 
 delete each exists keys values
-§R     ¨C   ¦s     Áä   ­È     
+åˆª     æ¯   å­˜     éµ   å€¼     
 
 binmode close closedir dbmclose dbmopen die eof fileno flock format getc
-ªk      ³¬    Ãö       »×       ´¦      ¦º  µ²  ¸¹     Âê    ±Æ     Â^
+æ³•      é–‰    é—œ       é–¤       æ­      æ­»  çµ  è™Ÿ     é–    æ’     æ“·
 print printf read readdir rewinddir seek seekdir select syscall
-¦L    ¿é     Åª   readdir rewinddir ·j   seekdir ¾Ü     ³ê
+å°    è¼¸     è®€   readdir rewinddir æœ   seekdir æ“‡     å–š
 sysread sysseek syswrite tell telldir truncate warn write
-sysread sysseek syswrite §i   telldir ÁY       °T   ¼g
+sysread sysseek syswrite å‘Š   telldir ç¸®       è¨Š   å¯«
 
 pack read syscall sysread syswrite unpack vec
-¥]   Åª   syscall sysread syswrite ±Ò     ¦V 
+åŒ…   è®€   syscall sysread syswrite å•Ÿ     å‘ 
 
 chdir chmod chown chroot fcntl glob ioctl link lstat mkdir open opendir
-¥Ø    Åv    ¾Ö    ¾E     ±±    ¥ş   ¨î    Ãì   lstat ³y    ¶}   opendir 
+ç›®    æ¬Š    æ“    é·     æ§    å…¨   åˆ¶    éˆ   lstat é€     é–‹   opendir 
 readlink rename rmdir stat symlink umask unlink utime
-readlink §ó     ·´    ºA   symlink »X    ÃP     utime 
+readlink æ›´     æ¯€    æ…‹   symlink è’™    é¬†     utime 
 
 caller continue die do dump eval exit goto last next redo return sub wantarray
-³ê     Äò       ¦º  ¬° ¶É   °õ   Â÷   ÅD   §À   ¦¸   ­«   ¦^     °Æ  ±ı        
+å–š     çºŒ       æ­»  ç‚º å‚¾   åŸ·   é›¢   èº   å°¾   æ¬¡   é‡   å›     å‰¯  æ¬²        
 
 caller import local my our package use
-³ê     ¾É     °ì    §^ «¥  ®M      ¥Î  
+å–š     å°     åŸŸ    å¾ å’±  å¥—      ç”¨  
 
 defined dump eval formline local my our reset scalar undef wantarray
-©w      ¶É   °õ   formline °ì    §^ «¥  ©Ù    ¶q     ®ø    ±ı        
+å®š      å‚¾   åŸ·   formline åŸŸ    å¾ å’±  æŠ¹    é‡     æ¶ˆ    æ¬²        
 
 alarm exec fork getpgrp getppid getpriority kill
-¹a    ¥Í   ´Ş   getpgrp getppid getpriority ±ş   
+éˆ´    ç”Ÿ   æ®–   getpgrp getppid getpriority æ®º   
+
+for
+é‡
 
 pipe qx/ setpgrp setpriority sleep system times wait waitpid
-ºŞ   qx/ setpgrp setpriority ¯v    §@     ­p    ­Ô   waitpid 
+ç®¡   qx/ setpgrp setpriority çœ     ä½œ     è¨ˆ    å€™   waitpid 
 
 do no package require use
-¬° µL ®M      ¥²      ¥Î  
+ç‚º ç„¡ å¥—      å¿…      ç”¨  
 
 bless dbmclose dbmopen package ref tie tied untie
-¯¬    dbmclose dbmopen ®M      ·Ó  Äñ  ¿£   ¸Ñ
+ç¥    dbmclose dbmopen å¥—      ç…§  çº  ç¸›   è§£
 
 accept bind connect getpeername getsockname getsockopt listen recv send
-¨ü     ¿£   ³s      getpeername getsockname getsockopt ²â     ¦¬   °e
+å—     ç¸›   é€£      getpeername getsockname getsockopt è†     æ”¶   é€
 
 setsockopt shutdown sockatmark socket socketpair 
-setsockopt shutdown sockatmark ¼Ñ     socketpair 
+setsockopt shutdown sockatmark æ§½     socketpair 
 
 msgctl msgget msgrcv msgsnd semctl semget semop shmctl shmget shmread shmwrite
 msgctl msgget msgrcv msgsnd semctl semget semop shmctl shmget shmread shmwrite
@@ -223,11 +228,11 @@ setnetent setprotoent setservent
 setnetent setprotoent setservent 
 
 gmtime localtime time
-·Ç     °Ï        ®É
+æº–     å€        æ™‚
 
 attributes autouse base blib bytes charnames constant diagnostics encoding fields
-©Ê         ¬¡      °ò   ¬A   ¦r    ¦W        ±`       ¶E          ½X       Äæ
+æ€§         æ´»      åŸº   æ‹¬   å­—    å        å¸¸       è¨º          ç¢¼       æ¬„
 filetest integer less locale overload sigtrap strict subs utf8 vars vmsish warnings
-¸Õ       Äw      ¤Ö   °ê     ¸ü       ¸¹      ÄY     ¦¡   ³q   ÅÜ   ­Ø     Äµ
+è©¦       ç±Œ      å°‘   åœ‹     è¼‰       è™Ÿ      åš´     å¼   é€š   è®Š   å€­     è­¦
 Lingua::Sinica::PerlYuYan::translate Lingua::Sinica::PerlYuYan::Tab
-Ä¶                                   ªí
+è­¯                                   è¡¨
