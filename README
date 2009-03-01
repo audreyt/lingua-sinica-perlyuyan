@@ -1,0 +1,39 @@
+# $File: //member/autrijus/Lingua-Sinica-PerlYuYan/README $ $Author: autrijus $
+# $Revision: #2 $ $Change: 706 $ $DateTime: 2002/08/18 03:49:00 $
+
+This is the README file for Lingua::Sinica::PerlYuYan, a simple
+source filter that lets you write perl in Chinese.
+lacnauge-pack for perl.
+
+* Installation
+
+Lingua::Sinica::PerlYuYan uses the standard perl module install process:
+
+cpansign -v		# see SIGNATURE for details
+perl Makefile.PL
+make
+make test
+make install
+
+* Copyright
+
+Copyright 2001, 2002 by Autrijus Tang <autrijus@autrijus.org>.
+
+All rights reserved.  You can redistribute and/or modify
+this bundle under the same terms as Perl itself.
+
+See <http://www.perl.com/perl/misc/Artistic.html>.
+
+* Introduction
+
+The Lingua::Sinica::PerlYuYan makes it makes it possible to write
+Perl programs in Chinese. (If you have to ask "Why?", please refer to
+Lingua::Romana::Perligata for related information.)
+
+This module uses the single-character property of Chinese to disambiguate
+between keyword matches; whitespaces could be omitted this way, much
+as in real Chinese writings.
+
+The vocabulary is of the WenYanWen (文言文, literary text) mode, not
+much used in modern Chinese, which prefers the BaiHuaWen (白話文, spoken
+text) with multiple-syllable words.
