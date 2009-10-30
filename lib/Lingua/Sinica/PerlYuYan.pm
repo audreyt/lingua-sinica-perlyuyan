@@ -1,21 +1,19 @@
-# $File: //member/autrijus/Lingua-Sinica-PerlYuYan/PerlYuYan.pm $ $Author: autrijus $
-# $Revision: #2 $ $Change: 706 $ $DateTime: 2002/08/18 03:49:00 $
-
 package Lingua::Sinica::PerlYuYan;
-$Lingua::Sinica::PerlYuYan::VERSION = '0.03';
 
-use strict;
+use 5.008;
 use utf8;
-use Filter::Simple;
-use Encode;
+use strict;
+use Filter::Simple::Compile;
+use Encode ();
+
+our $VERSION = '0.10';
 
 =head1 NAME
 
-Lingua::Sinica::PerlYuYan - Use Chinese to write Perl
+Lingua::Sinica::PerlYuYan - Perl in Classical Chinese in Perl
 
 =head1 SYNOPSIS
 
-    #!/usr/local/bin/perl
     # The Sieve of Eratosthenes - 埃拉托斯芬篩法
     use Lingua::Sinica::PerlYuYan;
 
@@ -30,31 +28,29 @@ Lingua::Sinica::PerlYuYan - Use Chinese to write Perl
 
 =head1 DESCRIPTION
 
-The B<Lingua::Sinica::PerlYuYan> makes it makes it possible to write
-Perl programs in Chinese. (If you have to ask "Why?", please refer to
-L<Lingua::Romana::Perligata> for related information.)
+The B<Lingua::Sinica::PerlYuYan> makes it possible to write Perl programs in
+Classical Chinese poetry in Perl.
+
+(If you I<have> to ask "Why?", please refer to L<Lingua::Romana::Perligata> for
+related information.)
 
 This module uses the single-character property of Chinese to disambiguate
-between keywords, thus whitespaces could be omitted this way, much like
-in real Chinese writings.
+between keywords, thus whitespaces could be elided much like in real Chinese
+writings.
 
-The vocabulary is of the I<WenYanWen> (文言文, literary text) mode,
-not much used in modern Chinese, which prefers the I<BaiHuaWen>
-(白話文, spoken text) mode with multiple-syllable words.
+The vocabulary is in the 文言 (literary text) mode, not much used in modern
+Chinese society; the common mode is 白話 (spoken text) mode with multisyllabic
+words.
 
-You could use C<Lingua::Sinica::PerlYuYan::translate()> (or simply
-as C<譯()>) to translate a string containing English programs into
-Chinese.
-
-=head1 CAVEATS
-
-Currently Big-5 only. UTF-8 and GB2312 support is trivial, and will be
-available upon request.
+You could use C<Lingua::Sinica::PerlYuYan::translate()> (or simply as C<譯()>)
+to translate a string containing English programs into Chinese.
 
 =cut
+
 our %Tab;
 while (<DATA>) {
-    $_ = Encode::decode_utf8( $_ );
+    $_ = Encode::is_utf8($_) ? $_ : Encode::decode_utf8($_);
+
     next if /^\s*$/;
     chomp; my $chi = <DATA>; chomp $chi;
     $chi =~ s/[a-z]+//ig;
@@ -62,23 +58,24 @@ while (<DATA>) {
     @Tab{ $chi =~ /(.)/g } = map { /^[a-z]+$/ ? "$_ " : $_ } split( /[\s\t]/, $_ );
 }
 
-@Tab{qw/資曰     亂曰    檔曰     列曰     套曰/} = qw{
-        __DATA__ __END__ __FILE__ __LINE__ __PACKAGE__
-};
+@Tab{qw{ 資曰     亂曰    檔曰     列曰     套曰        }}
+   = qw{ __DATA__ __END__ __FILE__ __LINE__ __PACKAGE__ };
 
 FILTER {
-    $_ = Encode::decode_utf8($_);
+    $_ = Encode::is_utf8($_) ? $_ : Encode::decode_utf8($_);
+
     foreach my $key ( sort { length $b <=> length $a } keys %Tab ) {
-        print "$key\n";
         s/$key/$Tab{$key}/g;
     }
-    return $_;
+
+    return($_ = Encode::encode_utf8($_));
 };
 
+no warnings 'redefine';
 sub translate {
     my $code = shift;
 
-    foreach my $key (sort {length $Tab{$b} cmp length $Tab{$a}} keys %Tab) {
+    for my $key (sort {length $Tab{$b} cmp length $Tab{$a}} keys %Tab) {
 	$code =~ s/\Q$Tab{$key}\E/$key/g;
     }
 
@@ -89,20 +86,39 @@ sub translate {
 
 =head1 SEE ALSO
 
-L<Filter::Simple>, L<Lingua::Romana::Perligata>.
+L<Filter::Simple::Compile>, L<Lingua::Romana::Perligata>
 
 =head1 AUTHORS
 
-Autrijus Tang E<lt>autrijus@autrijus.orgE<gt>
+Au Tang E<lt>cpan@audreyt.orgE<gt>
 
 =head1 COPYRIGHT
 
-Copyright 2001, 2002 by Autrijus Tang E<lt>autrijus@autrijus.orgE<gt>.
+Copyright 2001-2009 by Au Tang E<lt>cpan@audreyt.orgE<gt>.
 
-This program is free software; you can redistribute it and/or 
-modify it under the same terms as Perl itself.
+This software is released under the MIT license cited below.  Additionally,
+when this software is distributed with B<Perl Kit, Version 5>, you may also
+redistribute it and/or modify it under the same terms as Perl itself.
 
-See L<http://www.perl.com/perl/misc/Artistic.html>
+=head2 The "MIT" License
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
 
 =cut
 
@@ -124,7 +140,7 @@ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
 ' ' " " , , => < . . > / / ? ` ` ~
 曰矣道哉又並與 小點接大除分歟行者繫
 ! @ # $ % ^ & * ( ) - = _ + [ ] { } \ | ; ; : ' " , , < . > / ? ` ~
-！＠＃＄％︿＆＊（）－＝禳洁e〕｛｝╲｜；。：’”，、＜．＞╱？‵∼
+！＠＃＄％︿＆＊（）－＝＿＋〔〕｛｝╲｜；。：’”，、＜．＞╱？‵～
 
 .. ... ** ++ -- -> ::
 至 乃  冪 增 扣 之 宗
@@ -161,17 +177,17 @@ delete each exists keys values
 binmode close closedir dbmclose dbmopen die eof fileno flock format getc
 法      閉    關       閤       揭      死  結  號     鎖    排     擷
 print printf read readdir rewinddir seek seekdir select syscall
-印    輸     讀   readdir rewinddir 搜   seekdir 擇     喚
+印    輸     讀   覽      迴        搜   尋      擇     召
 sysread sysseek syswrite tell telldir truncate warn write
-sysread sysseek syswrite 告   telldir 縮       訊   寫
+鑑      狩      敕       告   訴      縮       訊   寫
 
-pack read syscall sysread syswrite unpack vec
-包   讀   syscall sysread syswrite 啟     向 
+pack read unpack vec
+包   讀   啟     向 
 
 chdir chmod chown chroot fcntl glob ioctl link lstat mkdir open opendir
-目    權    擁    遷     控    全   制    鏈   lstat 造    開   opendir 
+目    權    擁    遷     控    全   制    鏈   況    造    開   展
 readlink rename rmdir stat symlink umask unlink utime
-readlink 更     毀    態   symlink 蒙    鬆     utime 
+readlink 更     毀    態   symlink 蒙    鬆     刻
 
 caller continue die do dump eval exit goto last next redo return sub wantarray
 喚     續       死  為 傾   執   離   躍   尾   次   重   回     副  欲        

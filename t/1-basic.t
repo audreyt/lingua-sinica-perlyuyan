@@ -1,5 +1,4 @@
 #!/usr/bin/env perl
-BEGIN { require 'PerlYuYan.pm'; };
 use Lingua::Sinica::PerlYuYan;
 
 用警兮用嚴。
@@ -16,5 +15,5 @@ use Lingua::Sinica::PerlYuYan;
 國無人莫我知兮    又何懷乎故都
 既莫足與為美政兮  吾將從彭咸之所居
 
-印重一至十兮
+印重一至一兮
 重起一至十合始印終

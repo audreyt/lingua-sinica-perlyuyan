@@ -1,40 +1,27 @@
-____________________________________________________________________________
-[   706] By: autrijus                              on 2002/08/18  03:49:00
-        Log: * 0.03.
-             * added lots of new keywords.
-             * cleaned up POD.
-	   ! Makefile.PL PerlYuYan.pm README
-____________________________________________________________________________
-[   687] By: autrijus                              on 2002/08/17  09:01:08
-        Log: * manifest checkin.
-	   ! MANIFEST
-____________________________________________________________________________
-[  2912] By: autrijus                              on 2002/01/22  01:51:40
-        Log: * This be 0.02.
-             * eliminate duplicates.
-	   ! PerlYuYan.pm t/1-basic.t
-____________________________________________________________________________
-[  2911] By: autrijus                              on 2002/01/22  01:46:31
-        Log: * new example.
-	   ! PerlYuYan.pm
-____________________________________________________________________________
-[  2910] By: autrijus                              on 2002/01/21  23:42:44
-        Log: * changes.
-	   ! Changes
-____________________________________________________________________________
-[  2909] By: autrijus                              on 2002/01/21  23:42:24
-        Log: * this be 0.01 release.
-             * updates PODs.
-	   ! PerlYuYan.pm README
-____________________________________________________________________________
-[  2908] By: autrijus                              on 2002/01/21  23:38:59
-        Log: * update test in accord to POD.
-	   ! t/1-basic.t
-____________________________________________________________________________
-[  2907] By: autrijus                              on 2002/01/21  23:37:25
-        Log: * changes.
-	   + Changes
-____________________________________________________________________________
-[  2906] By: autrijus                              on 2002/01/21  23:35:10
-        Log: * perl in chinese.
-	   + MANIFEST Makefile.PL PerlYuYan.pm README t/1-basic.t
+[Changes for 0.10 - 2009-10-31]
+
+* LICENSING CHANGE: This compilation and all individual files in it
+  (except for the bundled libsyck code) are now under the permissive
+  "MIT" license.  See the COPYRIGHT section in README for the new terms.
+
+* Patch from Cornelius: Add support for UTF-8 literal text.
+
+* We now require Perl 5.8.0 or later.
+
+* New translated keywords: readdir readlink rewinddir seekdir symlink
+  syscall sysread sysseek syswrite telldir.
+
+[Changes for 0.03 - 2002-08-18]
+
+* Added lots of new keywords.
+* Cleaned up POD.
+
+[Changes for 0.02 - 2002-01-22]
+
+* Eliminate duplicates.
+* Add a new example.
+
+[Changes for 0.01 - 2002-01-21]
+
+* This be 0.01 release.
+* Updates PODs.

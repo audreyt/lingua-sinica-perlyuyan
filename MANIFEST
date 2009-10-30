@@ -1,7 +1,16 @@
 Changes
-MANIFEST
+inc/Module/Install.pm
+inc/Module/Install/Base.pm
+inc/Module/Install/Can.pm
+inc/Module/Install/Fetch.pm
+inc/Module/Install/Makefile.pm
+inc/Module/Install/Metadata.pm
+inc/Module/Install/Win32.pm
+inc/Module/Install/WriteAll.pm
+lib/Lingua/Sinica/PerlYuYan.pm
 Makefile.PL			List of files
-PerlYuYan.pm			Good things
+MANIFEST
+META.yml
 README
 SIGNATURE
 t/1-basic.t
