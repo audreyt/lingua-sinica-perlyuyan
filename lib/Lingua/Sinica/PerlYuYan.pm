@@ -8,6 +8,8 @@ use Encode ();
 
 our $VERSION = '0.10';
 
+=encoding utf8
+
 =head1 NAME
 
 Lingua::Sinica::PerlYuYan - Perl in Classical Chinese in Perl

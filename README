@@ -34,6 +34,6 @@ This module uses the single-character property of Chinese to disambiguate
 between keyword matches; whitespaces could be omitted this way, much
 as in real Chinese writings.
 
-The vocabulary is of the WenYanWen (¤å¨¥¤å, literary text) mode, not
-much used in modern Chinese, which prefers the BaiHuaWen (¥Õ¸Ü¤å, spoken
+The vocabulary is of the WenYanWen (æ–‡è¨€æ–‡, literary text) mode, not
+much used in modern Chinese, which prefers the BaiHuaWen (ç™½è©±æ–‡, spoken
 text) with multiple-syllable words.
