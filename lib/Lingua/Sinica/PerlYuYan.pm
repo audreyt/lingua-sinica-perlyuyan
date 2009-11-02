@@ -54,10 +54,15 @@ while (<DATA>) {
     $_ = Encode::is_utf8($_) ? $_ : Encode::decode_utf8($_);
 
     next if /^\s*$/;
-    chomp; my $chi = <DATA>; chomp $chi;
-    $chi =~ s/[a-z]+//ig;
-    $chi =~ s/\s//g;
-    @Tab{ $chi =~ /(.)/g } = map { /^[a-z]+$/ ? "$_ " : $_ } split( /[\s\t]/, $_ );
+    my @eng = split ' ';
+    my @chi = map {/\A [!-~]+ \z/msx ? $_ : split //, $_}
+      # clusters of ASCII are untranslated keywords; keep them
+      split ' ', <DATA>;
+    for (my $i = 0; $i <= $#eng; $i++) {
+        next if $chi[$i] eq $eng[$i];    # filter untranslated
+        $Tab{$chi[$i]} =    # append space if keyword, but not single letter
+        $eng[$i] =~ /\A [a-z]{2,} \z/msx ? $eng[$i] . ' ' : $eng[$i];
+    }
 }
 
 @Tab{qw{ 資曰     亂曰    檔曰     列曰     套曰        }}
