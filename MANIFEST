@@ -5,6 +5,7 @@ inc/Module/Install/Can.pm
 inc/Module/Install/Fetch.pm
 inc/Module/Install/Makefile.pm
 inc/Module/Install/Metadata.pm
+inc/Module/Install/ReadmeFromPod.pm
 inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
 lib/Lingua/Sinica/PerlYuYan.pm
@@ -13,4 +14,6 @@ MANIFEST
 META.yml
 README
 SIGNATURE
-t/1-basic.t
+t/0-basic.t
+t/1-mult.t
+t/2-table.t

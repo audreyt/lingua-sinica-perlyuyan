@@ -1,6 +1,6 @@
 package Lingua::Sinica::PerlYuYan;
 
-use 5.010;
+use 5.008;
 use utf8;
 use strict;
 use Filter::Simple::Compile;
@@ -164,7 +164,7 @@ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
 **= += *= &= <<= &&= -= /= |= >>= ||= .= %= ^= //= x=
 **= += *= &= <<= &&= -= /= |= >>= ||= .= %= ^= //= x=
 
-$/ $_ @_ "\x20" "\t" "\n" main
+$/ $_ @_ \x20   \t   \n    main
 段 此 諸 空     格   列   主
 
 STDIN STDOUT STDERR DATA BEGIN END INIT CHECK DESTROY
@@ -233,7 +233,7 @@ bless dbmclose dbmopen package ref tie tied untie
 祝    dbmclose dbmopen 套      照  纏  縛   解
 
 accept bind connect getpeername getsockname getsockopt listen recv send
-受     縛   連      getpeername getsockname getsockopt 聆     收   送
+受     束   連      getpeername getsockname getsockopt 聆     收   送
 
 setsockopt shutdown sockatmark socket socketpair
 setsockopt shutdown sockatmark 槽     socketpair
