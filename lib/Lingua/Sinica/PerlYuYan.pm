@@ -6,7 +6,7 @@ use strict;
 use Filter::Simple::Compile;
 use Encode ();
 
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 
 =encoding utf8
 
@@ -83,7 +83,7 @@ sub translate {
     my $code = shift;
 
     for my $key (sort {length $Tab{$b} cmp length $Tab{$a}} keys %Tab) {
-	$code =~ s/\Q$Tab{$key}\E/$key/g;
+        $code =~ s/\Q$Tab{$key}\E/$key/g;
     }
 
     return $code;

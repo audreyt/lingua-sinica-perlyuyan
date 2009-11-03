@@ -1,39 +1,68 @@
-# $File: //member/autrijus/Lingua-Sinica-PerlYuYan/README $ $Author: autrijus $
-# $Revision: #2 $ $Change: 706 $ $DateTime: 2002/08/18 03:49:00 $
+NAME
+    Lingua::Sinica::PerlYuYan - Perl in Classical Chinese in Perl
 
-This is the README file for Lingua::Sinica::PerlYuYan, a simple
-source filter that lets you write perl in Chinese.
-lacnauge-pack for perl.
+SYNOPSIS
+        # The Sieve of Eratosthenes - 埃拉托斯芬篩法
+        use Lingua::Sinica::PerlYuYan;
 
-* Installation
+        用籌兮用嚴  井涸兮無礙。
+        印曰最高矣  又道數然哉。
+        截起吾純風  賦小入大合。
+        習予吾陣地  並二至純風。
+        當起段賦取  加陣地合始。
+        陣地賦篩始  繫繫此雜段。
+        終陣地兮印  正道次標哉。
+        輸空接段點  列終註泰來。
 
-Lingua::Sinica::PerlYuYan uses the standard perl module install process:
+DESCRIPTION
+    The Lingua::Sinica::PerlYuYan makes it possible to write Perl programs
+    in Classical Chinese poetry in Perl.
 
-cpansign -v		# see SIGNATURE for details
-perl Makefile.PL
-make
-make test
-make install
+    (If you *have* to ask "Why?", please refer to Lingua::Romana::Perligata
+    for related information.)
 
-* Copyright
+    This module uses the single-character property of Chinese to
+    disambiguate between keywords, thus whitespaces could be elided much
+    like in real Chinese writings.
 
-Copyright 2001, 2002 by Autrijus Tang <autrijus@autrijus.org>.
+    The vocabulary is in the 文言 (literary text) mode, not much used in
+    modern Chinese society; the common mode is 白話 (spoken text) mode with
+    multisyllabic words.
 
-All rights reserved.  You can redistribute and/or modify
-this bundle under the same terms as Perl itself.
+    You could use "Lingua::Sinica::PerlYuYan::translate()" (or simply as
+    "譯()") to translate a string containing English programs into Chinese.
 
-See <http://www.perl.com/perl/misc/Artistic.html>.
+SEE ALSO
+    Filter::Simple::Compile, Lingua::Romana::Perligata
 
-* Introduction
+AUTHORS
+    Au Tang <cpan@audreyt.org>
 
-The Lingua::Sinica::PerlYuYan makes it makes it possible to write
-Perl programs in Chinese. (If you have to ask "Why?", please refer to
-Lingua::Romana::Perligata for related information.)
+COPYRIGHT
+    Copyright 2001-2009 by Au Tang <cpan@audreyt.org>.
 
-This module uses the single-character property of Chinese to disambiguate
-between keyword matches; whitespaces could be omitted this way, much
-as in real Chinese writings.
+    This software is released under the MIT license cited below.
+    Additionally, when this software is distributed with Perl Kit, Version
+    5, you may also redistribute it and/or modify it under the same terms as
+    Perl itself.
 
-The vocabulary is of the WenYanWen (文言文, literary text) mode, not
-much used in modern Chinese, which prefers the BaiHuaWen (白話文, spoken
-text) with multiple-syllable words.
+  The "MIT" License
+    Permission is hereby granted, free of charge, to any person obtaining a
+    copy of this software and associated documentation files (the
+    "Software"), to deal in the Software without restriction, including
+    without limitation the rights to use, copy, modify, merge, publish,
+    distribute, sublicense, and/or sell copies of the Software, and to
+    permit persons to whom the Software is furnished to do so, subject to
+    the following conditions:
+
+    The above copyright notice and this permission notice shall be included
+    in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+    IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+    CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
