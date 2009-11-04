@@ -1,3 +1,52 @@
+our $VERSION = 1257342595.16102; # 2009年11月 4日 周三 21時50分12秒 CST
+
+13:48 <nothingmuch> use Time::HiRes qw(time);
+13:48 <audreyt> right, it's the era of 64 bits
+13:49 <nothingmuch> =)
+...next...
+13:51  * nothingmuch will use /usr/bin/uuidgen
+13:52 <nothingmuch> since there's no concept of "time" then the version you should use is competely incidential
+13:52 <audreyt> I'll reserve that for my next art project. :)
+...reset...
+14:00 <audreyt> may I quote you (under CC0 license!) in the commit log and Changes file? :)
+14:01 <nothingmuch> i relinquish all rights to my wisdom or lack thereof
+14:01 <nothingmuch> (hopefully i give up responsibility too ;-)
+14:02 <audreyt> you do :D there was no responsibility to begin with
+...shift...
+13:52 <nothingmuch> in fact, software does not exist
+13:53 <audreyt> it's the very nonexistence that makes it work... that is the essence of मध्यमिक
+13:53 <audreyt> Nagarjuna was very much a hacker
+13:54 <audreyt> it's said that Nagarjuna comprehended pretty much everything, and practiced shadow nijutsu and hacked into the 
+                royal residence during adolescence
+13:54 <audreyt> along with a peer, who got caught by the royal guard and promptedly killed
+13:55 <audreyt> so Nagarjuna sat down and wrote Fundamental Verses of the Middle Way and Seventy Verses on Emptiness, 
+                effectively hacked the indic culture into Hegel's shape, just much earlier...
+13:56 <audreyt> then Tang XuanZang ported it to Chinese during Emperor Lee's reign (Tang and Lee happens to be my parents' 
+                families)
+13:56 <audreyt> as the Heart Sutra
+13:57 <audreyt> "Essence of Wisdom Sutra", which is chanted everyday in CJKV by common people
+13:57 <audreyt> I ported that to Unix a couple weeks ago as 
+13:57 <audreyt>     sync;sync;shutdown -k;halt -lnqu
+...comefrom...
+14:02 <audreyt> "sync; sync; sudo sync; sudo shutdown -k; sudo halt -lnqu"
+14:03 <audreyt> was my (working) translation
+...goto...
+13:58 <audreyt> which is what I now use daily whenever I get into an online situation where flamewar is immediate
+13:58 <audreyt> ...so I gets (as promised by the Sutra) absolute immunity over flamewars
+13:58 <nothingmuch> §=)
+13:58 <audreyt> ...now I'd just have to do that again in realspace too :)
+13:58 <audreyt> .
+13:58 <nothingmuch> i wonder what that typo means
+13:59 <nothingmuch> perhaps it's an enlightened smiley
+13:59 <audreyt> converging infinity? :)
+13:59 <audreyt> yeah, it's beautiful
+...last...
+14:04 <audreyt> well, translations evolve, too :) we'll probably revisit many times with reified control...
+14:05 <audreyt> in realspace though, it's 10pm and I gotta go home and sleep. ttyl!
+14:05 <nothingmuch> ciao ciao
+14:05 <nothingmuch> i need to do laundry and rehearse myself
+14:06 <audreyt> :D see ya!
+
 our $VERSION = 1257305840; # 2009年11月 4日 周三 11時37分11秒 CST
 
 * Restore SYNOPSIS text so it works under modern Perl again.
