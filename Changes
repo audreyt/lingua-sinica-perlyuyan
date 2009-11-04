@@ -1,4 +1,15 @@
-[Changes for 1257301380 # 2009年11月 4日 周三 10時22分59秒 CST]
+our $VERSION = 1257305840; # 2009年11月 4日 周三 11時37分11秒 CST
+
+* Restore SYNOPSIS text so it works under modern Perl again.
+
+* Restore the \n, \t and \x20 with proper quotes around them.
+
+* Add a couple lines of Makefile.PL poetry:
+
+    author undef;
+    license 'cc0';
+
+our $VERSION = 1257301380; # 2009年11月 4日 周三 10時22分59秒 CST
 
 * VERSIONING CHANGE: This module is now using the Unix timestamp
   as its version number format.

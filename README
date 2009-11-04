@@ -2,20 +2,20 @@ NAME
     Lingua::Sinica::PerlYuYan - Perl in Classical Chinese in Perl
 
 VERSION
-    our $VERSION = 1257301380; # 2009年11月 4日 周三 10時22分59秒 CST
+    our $VERSION = 1257305840; # 2009年11月 4日 周三 11時37分11秒 CST
 
 SYNOPSIS
         # The Sieve of Eratosthenes - 埃拉托斯芬篩法
         use Lingua::Sinica::PerlYuYan;
 
-        用籌兮用嚴  井涸兮無礙。
-        印曰最高矣  又道數然哉。
-        截起吾純風  賦小入大合。
-        習予吾陣地  並二至純風。
-        當起段賦取  加陣地合始。
-        陣地賦篩始  繫繫此雜段。
-        終陣地兮印  正道次標哉。
-        輸空接段點  列終註泰來。
+          用籌兮用嚴。井涸兮無礙
+        。印曰最高矣  又道數然哉。
+        。截起吾純風  賦小入大合。
+        。習予吾陣地  並二至純風。
+        。當起段賦取  加陣地合始。
+        。陣地賦篩始  繫繫此雜段。
+        。終陣地兮印  正道次標哉。
+        。輸空接段點  列終註泰來。
 
 DESCRIPTION
     It is now possible to write Perl programs in Classical Chinese poetry in

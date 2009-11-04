@@ -29,7 +29,7 @@ binmode $builder->todo_output,    ':utf8';
     宗 => '::',
     同 => 'eq ',
     否 => 'not ',
-    列 => '\\n',
+    列 => '"\\n"',
     主 => 'main ',
     察 => 'CHECK',
     滅 => 'DESTROY',

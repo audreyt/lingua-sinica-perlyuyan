@@ -6,7 +6,7 @@ use strict;
 use Filter::Simple::Compile;
 use Encode ();
 
-our $VERSION = 1257301380; # 2009年11月 4日 周三 10時22分59秒 CST
+our $VERSION = 1257305840; # 2009年11月 4日 周三 11時37分11秒 CST
 
 =encoding utf8
 
@@ -16,21 +16,21 @@ Lingua::Sinica::PerlYuYan - Perl in Classical Chinese in Perl
 
 =head1 VERSION
 
-our $VERSION = 1257301380; # 2009年11月 4日 周三 10時22分59秒 CST
+our $VERSION = 1257305840; # 2009年11月 4日 周三 11時37分11秒 CST
 
 =head1 SYNOPSIS
 
     # The Sieve of Eratosthenes - 埃拉托斯芬篩法
     use Lingua::Sinica::PerlYuYan;
 
-    用籌兮用嚴  井涸兮無礙。
-    印曰最高矣  又道數然哉。
-    截起吾純風  賦小入大合。
-    習予吾陣地  並二至純風。
-    當起段賦取  加陣地合始。
-    陣地賦篩始  繫繫此雜段。
-    終陣地兮印  正道次標哉。
-    輸空接段點  列終註泰來。
+      用籌兮用嚴。井涸兮無礙
+    。印曰最高矣  又道數然哉。
+    。截起吾純風  賦小入大合。
+    。習予吾陣地  並二至純風。
+    。當起段賦取  加陣地合始。
+    。陣地賦篩始  繫繫此雜段。
+    。終陣地兮印  正道次標哉。
+    。輸空接段點  列終註泰來。
 
 =head1 DESCRIPTION
 
@@ -158,7 +158,7 @@ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
 **= += *= &= <<= &&= -= /= |= >>= ||= .= %= ^= //= x=
 **= += *= &= <<= &&= -= /= |= >>= ||= .= %= ^= //= x=
 
-$/ $_ @_ \x20   \t   \n    main
+$/ $_ @_ "\x20" "\t" "\n" main
 段 此 諸 空     格   列   主
 
 STDIN STDOUT STDERR DATA BEGIN END INIT CHECK DESTROY
