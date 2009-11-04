@@ -14,6 +14,10 @@ our $VERSION = 1257301380; # 2009年11月 4日 周三 10時22分59秒 CST
 
 Lingua::Sinica::PerlYuYan - Perl in Classical Chinese in Perl
 
+=head1 VERSION
+
+our $VERSION = 1257301380; # 2009年11月 4日 周三 10時22分59秒 CST
+
 =head1 SYNOPSIS
 
     # The Sieve of Eratosthenes - 埃拉托斯芬篩法
