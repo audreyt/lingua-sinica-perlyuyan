@@ -6,7 +6,7 @@ use strict;
 use Filter::Simple::Compile;
 use Encode ();
 
-our $VERSION = 1257305840; # 2009年11月 4日 周三 11時37分11秒 CST
+our $VERSION = 1257340475; # 2009年11月 4日 周三 21時14分27秒 CST
 
 =encoding utf8
 
@@ -16,7 +16,7 @@ Lingua::Sinica::PerlYuYan - Perl in Classical Chinese in Perl - 中書珨
 
 =head1 VERSION
 
-our $VERSION = 1257305840; # 2009年11月 4日 周三 11時37分11秒 CST
+our $VERSION = 1257340475; # 2009年11月 4日 周三 21時14分27秒 CST
 
 =head1 SYNOPSIS
 
@@ -34,17 +34,19 @@ our $VERSION = 1257305840; # 2009年11月 4日 周三 11時37分11秒 CST
 
 =head1 DESCRIPTION
 
-It is now possible to write Perl programs in Classical Chinese poetry in Perl.
+This module makes it possible to write Perl programs in Classical Chinese poetry in Perl.
 
-此能以珨文言文珨者。
+說此經者，能以珨文言文珨。
 
 (If one I<has> to ask "Why?", please refer to L<Lingua::Romana::Perligata> for
 related information.)
 
+(闕譯，以待來者。)
+
 This module uses the single-character property of Chinese to disambiguate
 between keywords, so one may elide whitespaces much like in real Chinese writings.
 
-The vocabulary is in the 文言 (literary text) mode, not the common mode is 白話
+The vocabulary is in the 文言 (literary text) mode, not the common 白話
 (spoken text) mode with multisyllabic words.
 
 C<Lingua::Sinica::PerlYuYan::translate()> (or simply as C<譯()>) translates a
