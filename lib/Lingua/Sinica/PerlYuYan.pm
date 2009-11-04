@@ -12,7 +12,7 @@ our $VERSION = 1257343877.45504; # 2009年11月 4日 周三 22時11分25秒 CST
 
 =head1 NAME
 
-Lingua::Sinica::PerlYuYan - Perl in Classical Chinese in Perl - 中書珨
+Lingua::Sinica::PerlYuYan - 中書珨 - Perl in Classical Chinese in Perl
 
 =head1 VERSION
 
