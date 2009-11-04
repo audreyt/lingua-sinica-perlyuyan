@@ -12,7 +12,7 @@ our $VERSION = 1257305840; # 2009年11月 4日 周三 11時37分11秒 CST
 
 =head1 NAME
 
-Lingua::Sinica::PerlYuYan - Perl in Classical Chinese in Perl
+Lingua::Sinica::PerlYuYan - Perl in Classical Chinese in Perl - 中書珨
 
 =head1 VERSION
 
@@ -35,6 +35,8 @@ our $VERSION = 1257305840; # 2009年11月 4日 周三 11時37分11秒 CST
 =head1 DESCRIPTION
 
 It is now possible to write Perl programs in Classical Chinese poetry in Perl.
+
+此能以珨文言文珨者。
 
 (If one I<has> to ask "Why?", please refer to L<Lingua::Romana::Perligata> for
 related information.)
