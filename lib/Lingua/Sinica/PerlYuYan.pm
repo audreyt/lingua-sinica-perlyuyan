@@ -6,7 +6,7 @@ use strict;
 use Filter::Simple::Compile;
 use Encode ();
 
-our $VERSION = '0.11';
+our $VERSION = 1257301380; # 2009年11月 4日 周三 10時22分59秒 CST
 
 =encoding utf8
 
@@ -30,22 +30,19 @@ Lingua::Sinica::PerlYuYan - Perl in Classical Chinese in Perl
 
 =head1 DESCRIPTION
 
-The B<Lingua::Sinica::PerlYuYan> makes it possible to write Perl programs in
-Classical Chinese poetry in Perl.
+It is now possible to write Perl programs in Classical Chinese poetry in Perl.
 
-(If you I<have> to ask "Why?", please refer to L<Lingua::Romana::Perligata> for
+(If one I<has> to ask "Why?", please refer to L<Lingua::Romana::Perligata> for
 related information.)
 
 This module uses the single-character property of Chinese to disambiguate
-between keywords, thus whitespaces could be elided much like in real Chinese
-writings.
+between keywords, so one may elide whitespaces much like in real Chinese writings.
 
-The vocabulary is in the 文言 (literary text) mode, not much used in modern
-Chinese society; the common mode is 白話 (spoken text) mode with multisyllabic
-words.
+The vocabulary is in the 文言 (literary text) mode, not the common mode is 白話
+(spoken text) mode with multisyllabic words.
 
-You could use C<Lingua::Sinica::PerlYuYan::translate()> (or simply as C<譯()>)
-to translate a string containing English programs into Chinese.
+C<Lingua::Sinica::PerlYuYan::translate()> (or simply as C<譯()>) translates a
+string containing English programs into Chinese.
 
 =cut
 
@@ -95,37 +92,30 @@ sub translate {
 
 L<Filter::Simple::Compile>, L<Lingua::Romana::Perligata>
 
-=head1 AUTHORS
+=head1 CC0 1.0 Universal
 
-Au Tang E<lt>cpan@audreyt.orgE<gt>
+To the extent possible under law, 唐鳳 has waived all copyright and related
+or neighboring rights to Lingua-Sinica-PerlYuYan.
 
-=head1 COPYRIGHT
+This work is published from Taiwan.
 
-Copyright 2001-2009 by Au Tang E<lt>cpan@audreyt.orgE<gt>.
+L<http://creativecommons.org/publicdomain/zero/1.0>
 
-This software is released under the MIT license cited below.  Additionally,
-when this software is distributed with B<Perl Kit, Version 5>, you may also
-redistribute it and/or modify it under the same terms as Perl itself.
+=begin html
 
-=head2 The "MIT" License
+<p xmlns:dct="http://purl.org/dc/terms/" xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#">
+  <a rel="license" href="http://creativecommons.org/publicdomain/zero/1.0/" style="text-decoration:none;">
+    <img src="http://i.creativecommons.org/l/zero/1.0/88x31.png" border="0" alt="CC0" />
+  </a>
+  <br />
+  To the extent possible under law, <a href="http://www.audreyt.org/" rel="dct:publisher"><span property="dct:title">唐鳳</span></a>
+  has waived all copyright and related or neighboring rights to
+  <span property="dct:title">Lingua-Sinica-PerlYuYan</span>.
+This work is published from
+<span about="http://www.audreyt.org/" property="vcard:Country" datatype="dct:ISO3166" content="TW">Taiwan</span>.
+</p>
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
-THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
-DEALINGS IN THE SOFTWARE.
+=end html
 
 =cut
 

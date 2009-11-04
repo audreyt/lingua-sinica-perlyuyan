@@ -1,3 +1,14 @@
+[Changes for 1257301380 # 2009年11月 4日 周三 10時22分59秒 CST]
+
+* VERSIONING CHANGE: This module is now using the Unix timestamp
+  as its version number format.
+
+* LICENSING CHANGE: This compilation and all individual files in it
+  are now under the nullary CC0 1.0 Universal terms:
+
+  To the extent possible under law, 唐鳳 has waived all copyright and
+  related or neighboring rights to Lingua-Sinica-PerlYuYan.
+
 [Changes for 0.11 - 2009-11-03]
 
 * Fix parser; remove spaces at EOL.
@@ -12,8 +23,8 @@ Contributed by: Lars Dɪᴇᴄᴋᴏᴡ 迪拉斯 <daxim@cpan.org>
 [Changes for 0.10 - 2009-10-31]
 
 * LICENSING CHANGE: This compilation and all individual files in it
-  (except for the bundled libsyck code) are now under the permissive
-  "MIT" license.  See the COPYRIGHT section in README for the new terms.
+  are now under the permissive "MIT" license.  See the COPYRIGHT section
+  in README for the new terms.
 
 * Patch from Cornelius: Add support for UTF-8 literal text.
 

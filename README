@@ -15,54 +15,30 @@ SYNOPSIS
         輸空接段點  列終註泰來。
 
 DESCRIPTION
-    The Lingua::Sinica::PerlYuYan makes it possible to write Perl programs
-    in Classical Chinese poetry in Perl.
+    It is now possible to write Perl programs in Classical Chinese poetry in
+    Perl.
 
-    (If you *have* to ask "Why?", please refer to Lingua::Romana::Perligata
+    (If one *has* to ask "Why?", please refer to Lingua::Romana::Perligata
     for related information.)
 
     This module uses the single-character property of Chinese to
-    disambiguate between keywords, thus whitespaces could be elided much
-    like in real Chinese writings.
+    disambiguate between keywords, so one may elide whitespaces much like in
+    real Chinese writings.
 
-    The vocabulary is in the 文言 (literary text) mode, not much used in
-    modern Chinese society; the common mode is 白話 (spoken text) mode with
-    multisyllabic words.
+    The vocabulary is in the 文言 (literary text) mode, not the common mode is
+    白話 (spoken text) mode with multisyllabic words.
 
-    You could use "Lingua::Sinica::PerlYuYan::translate()" (or simply as
-    "譯()") to translate a string containing English programs into Chinese.
+    "Lingua::Sinica::PerlYuYan::translate()" (or simply as "譯()") translates
+    a string containing English programs into Chinese.
 
 SEE ALSO
     Filter::Simple::Compile, Lingua::Romana::Perligata
 
-AUTHORS
-    Au Tang <cpan@audreyt.org>
+CC0 1.0 Universal
+    To the extent possible under law, 唐鳳 has waived all copyright and
+    related or neighboring rights to Lingua-Sinica-PerlYuYan.
 
-COPYRIGHT
-    Copyright 2001-2009 by Au Tang <cpan@audreyt.org>.
+    This work is published from Taiwan.
 
-    This software is released under the MIT license cited below.
-    Additionally, when this software is distributed with Perl Kit, Version
-    5, you may also redistribute it and/or modify it under the same terms as
-    Perl itself.
-
-  The "MIT" License
-    Permission is hereby granted, free of charge, to any person obtaining a
-    copy of this software and associated documentation files (the
-    "Software"), to deal in the Software without restriction, including
-    without limitation the rights to use, copy, modify, merge, publish,
-    distribute, sublicense, and/or sell copies of the Software, and to
-    permit persons to whom the Software is furnished to do so, subject to
-    the following conditions:
-
-    The above copyright notice and this permission notice shall be included
-    in all copies or substantial portions of the Software.
-
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-    IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-    CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    <http://creativecommons.org/publicdomain/zero/1.0>
 

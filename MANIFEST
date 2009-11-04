@@ -13,7 +13,6 @@ Makefile.PL			List of files
 MANIFEST
 META.yml
 README
-SIGNATURE
 t/0-basic.t
 t/1-mult.t
 t/2-table.t
