@@ -1,3 +1,46 @@
+our $VERSION = 1257436327.00452; # 2009年11月 5日 周四 23時52分18秒 CST
+
+(Based on a conversation from http://www.plurk.com/p/2ih40z)
+
+其實這想法很簡單：NDS 上有一款 Scribblenaut 游戲，小孩畫什麼就會出現什麼。
+
+The idea is actually simple. On 兔肝猴 there's a game called 撰空, where kids
+can sketch out arbitrary concepts and it will manifest in game.
+
+從小看楚辭長大的小孩，自然就會希望自己寫“昨夜西風凋碧樹”就真的跑出碧樹來。
+
+So a kid growing up reading ancient romanticist poems, would naturally wish
+that penning "the sacred river Alph" and a river would actually appear.
+
+後來小孩長大了一點發現可以寫程式做到這件事。就醬。:-)
+
+Then the kid growed up a bit and discovered programming can actually project
+infantile omnipotence into a transitional zone. That's it. :-)
+
+...
+
+後來照顧小孩的叔叔姑姑伯伯嬸嬸各自搬走，小孩心臟病很嚴重不能旅行，只能寫詩想念他們。
+
+Shortly afterwards, the kid's primary caretakers - many uncles and aunts - formed
+families themselves and moved far away; the kid was born with severe ventricular
+septal defect and cannot travel at all, so all wailings are poured into poems.
+
+後來發現這些詩只要押了特定的 P 韻腳，像是 TCP, UDP, IP, HTTP, XMPP，就有魔力。
+
+After a while, the kid finds out that as long as the poems rhymes on -協, such as
+傳控協, 用信協, 跨協, 超文傳協 and 擴訊現協, mysterious power appears out of nowhere.
+
+後來再大一點，和其他人一起寫詩劇，演成噗浪和臉書，叔叔姑姑伯伯嬸嬸真的都進入詩的世界了。
+
+So the kid first wrote closet drama, and later learned to compose huge verses based
+on multipart/mixed playwrights.  Then the age of melodrama came and it was publicly
+performed into Twitter and Facebook. And the Real uncles and aunts, still alive, now
+registers into the Imaginary zone conjured from sheer Symbolic power.
+
+以上是對於拉岡 Sinthome 概念的實例講解。:-)
+
+The above is a field report illustrating Lacan's idea of 心慟. :-)
+
 our $VERSION = 1257342595.16102; # 2009年11月 4日 周三 21時50分12秒 CST
 
 13:48 <nothingmuch> use Time::HiRes qw(time);
