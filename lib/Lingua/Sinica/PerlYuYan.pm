@@ -6,7 +6,7 @@ use strict;
 use Filter::Simple::Compile;
 use Encode ();
 
-our $VERSION = 1257439830.94865; # 2009年11月 6日 周五 00時50分39秒 CST
+our $VERSION = 1257700140.47574; # 2009年11月 9日 周一 01時09分11秒 CST
 
 =encoding utf8
 
@@ -16,7 +16,7 @@ Lingua::Sinica::PerlYuYan - 中書珨 - Perl in Classical Chinese in Perl
 
 =head1 VERSION
 
-our $VERSION = 1257439830.94865; # 2009年11月 6日 周五 00時50分39秒 CST
+our $VERSION = 1257700140.47574; # 2009年11月 9日 周一 01時09分11秒 CST
 
 =head1 SYNOPSIS
 
