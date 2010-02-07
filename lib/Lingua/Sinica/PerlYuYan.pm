@@ -153,11 +153,11 @@ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
 && == || and or lt gt cmp eq not
 及 等 許 且  或 前 後 較  同 否
 
-=~ !~ x <=> ne ~~ //
-=~ !~ x <=> ne ~~ //
+=~ !~ x <=> ~~ //
+=~ !~ x <=> ~~ //
 
 << >> <= >= le ge != ne xor
-<< >> <= >= le ge != ne xor
+<< >> <= >= le ge != ne 抑
 
 **= += *= &= <<= &&= -= /= |= >>= ||= .= %= ^= //= x=
 **= += *= &= <<= &&= -= /= |= >>= ||= .= %= ^= //= x=
@@ -201,10 +201,10 @@ pack read unpack vec
 chdir chmod chown chroot fcntl glob ioctl link lstat mkdir open opendir
 目    權    擁    遷     控    全   制    鏈   況    造    開   展
 readlink rename rmdir stat symlink umask unlink utime
-readlink 更     毀    態   symlink 蒙    鬆     刻
+循       更     毀    態   徵      蒙    鬆     刻
 
-say if else elsif until while until foreach given when default break
-say 倘 else elsif until 當 until foreach given when default break
+say if else elsif until while foreach given when default break
+言  倘 else elsif 迄    當    foreach given when default break
 
 caller continue die do dump eval exit goto last next redo return sub wantarray
 喚     續       死  為 傾   執   離   躍   尾   次   重   回     副  欲
@@ -213,7 +213,7 @@ caller import local my our package use
 喚     導     域    吾 咱  套      用
 
 defined dump eval formline local my our reset scalar undef wantarray
-定      傾   執   formline 域    吾 咱  抹    量     消    欲
+定      傾   執   劃       域    吾 咱  抹    量     消    欲
 
 alarm exec fork getpgrp getppid getpriority kill
 鈴    生   殖   getpgrp getppid getpriority 殺
@@ -234,7 +234,7 @@ accept bind connect getpeername getsockname getsockopt listen recv send
 受     束   連      getpeername getsockname getsockopt 聆     收   送
 
 setsockopt shutdown sockatmark socket socketpair
-setsockopt shutdown sockatmark 槽     socketpair
+setsockopt shutdown sockatmark 槽     槏
 
 msgctl msgget msgrcv msgsnd semctl semget semop shmctl shmget shmread shmwrite
 msgctl msgget msgrcv msgsnd semctl semget semop shmctl shmget shmread shmwrite
